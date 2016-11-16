@@ -7,9 +7,9 @@ It's meant to provide an easy to use solution for building Arch Linux Docker ima
 
 ###Usage
 
-- Download an `archlinux-bootstrap-<date>-<architecture>.tar.gz` archive, preferably the newest one (or expect a longer `pacman -Syu` run at `docker build`, plus the possibility of having to merge some files manually afterwards). From my experience, https://archive.archlinux.org/iso/ is a very fast mirror, but you may want to choose your preferred one on https://www.archlinux.org/download/.
+- Download an <code>archlinux-bootstrap-<i>date-architecture</i>.tar.gz</code> archive, preferably the newest one (or expect a longer `pacman -Syu` run at `docker build`, plus the possibility of having to merge some files manually afterwards). From my experience, https://archive.archlinux.org/iso/ is a very fast mirror, but you may want to choose your preferred one on https://www.archlinux.org/download/.
 
-- Run `tar-fix.py --input=/path/to/the/archlinux-bootstrap-<date>-<architecture>.tar.gz --output=bootstrap.tar.gz`. This will remove input tarball's top-level directory from all its component paths, and save that in the output tarball. As a result its content starts at `/` rather than `x86_64/` or `i686/`, and so will the filesystem of the Docker image.
+- Run <code>tar-fix.py --input=archlinux-bootstrap-<i>date-architecture</i>.tar.gz --output=bootstrap.tar.gz</code>. This will remove input tarball's top-level directory from all its component paths, and save that in the output tarball. As a result its content starts at `/` rather than `x86_64/` or `i686/`, and so will the filesystem of the Docker image.
 
 - Place this `Dockerfile`, its `.dockerignore` and the `bootstrap.tar.gz` in one directory.
 
