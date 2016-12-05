@@ -2,7 +2,7 @@
 
 This is Arch Linux Docker base image build setup that employs the bootstrap tarball distributed by distro authors.
  
-It's meant to provide an easy to use solution for building Arch Linux Docker images on **non-Arch Linux hosts**, as an **unprivileged user**, which is not possible with the [currently recommended method](https://wiki.archlinux.org/index.php/Docker#Build_Image).
+It's meant to provide an easy to use solution for building Arch Linux Docker images on **non-Arch Linux hosts**, as an **unprivileged user** (if your Docker instance allows that), which is not possible with the [currently recommended method](https://wiki.archlinux.org/index.php/Docker#Build_Image).
 
 
 ###Usage
