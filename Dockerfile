@@ -22,7 +22,7 @@ RUN ln -s /usr/share/zoneinfo/UTC /etc/localtime \
     && rankmirrors -n 3 /tmp/mirrorlist | tee /etc/pacman.d/mirrorlist \
     && rm /tmp/mirrorlist \
     # `locale-gen' needs `gzip' (via `localedef', which works on /usr/share/i18n/charmaps/*.gz), `paccache' needs `awk'.
-    && pacman -Syu --noconfirm --noprogressbar gzip awk \
+    && pacman -Syu --noconfirm --noprogressbar --quiet gzip awk \
     && paccache -r -k0 \
     && echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen \
     && locale-gen \
