@@ -2,7 +2,7 @@ FROM scratch
 MAINTAINER Maciej Sieczka
 
 # Set the $architecture ARG on your `docker build' command line with `--build-arg architecture=x86_64' or `i686'.
-ARG architecture
+ARG architecture=x86_64
 
 ADD bootstrap.tar.gz /
 
