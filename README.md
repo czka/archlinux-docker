@@ -11,9 +11,9 @@ It's meant to provide an easy to use solution for building Arch Linux Docker ima
 
 - `cd` to a directory where you have cloned it.
 
-- Download an <code>archlinux-bootstrap-<i>date-architecture</i>.tar.gz</code> archive there, preferably the newest one (or expect a longer `pacman -Syu` run at `docker build`, and, if your tarball is very old, some incompatibilities to manifest; Arch changes fast). From my experience, https://archive.archlinux.org/iso/ is a very fast mirror, but you may want to choose your preferred one on https://www.archlinux.org/download/.
+- Download an <code>archlinux-bootstrap-<i>date-architecture</i>.tar.gz</code> archive there, preferably the newest one (or expect a longer `pacman -Syu` run at `docker build`, and, if your tarball is relatively old, some incompatibilities to manifest; Arch changes fast). From my experience, https://archive.archlinux.org/iso/ is a very fast mirror, but you may want to choose your preferred one on https://www.archlinux.org/download/.
 
-- Run <code>./tar_fix.py --input=archlinux-bootstrap-<i>date-architecture</i>.tar.gz --output=bootstrap.tar.gz</code>. This will remove input tarball's top-level directory from all its component paths, and save that in the output tarball. As a result its content starts at `/` rather than `x86_64/` or `i686/`, and so will the filesystem of the Docker image. `tar_fix.py` needs Python 3. It will fail with Python 2, like in [issue #1](https://github.com/czka/archlinux-docker/issues/1).
+- Run <code>./tar_fix.py --input=archlinux-bootstrap-<i>date-architecture</i>.tar.gz --output=bootstrap.tar.gz</code>. This will remove input tarball's top-level directory from all its component paths, and save that in the output tarball. As a result its content starts at `/` rather than `x86_64/` or `i686/`, and so will the filesystem of the Docker image. `tar_fix.py` needs Python 3.5. It will fail with Python 2, and even with 3.4, like in [issue #1](https://github.com/czka/archlinux-docker/issues/1).
 
 - Make sure you have my `Dockerfile`, `.dockerignore` and the `bootstrap.tar.gz` in one directory.
 
