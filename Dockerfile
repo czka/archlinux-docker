@@ -10,8 +10,7 @@ RUN if [ "$architecture" != "x86_64" -a "$architecture" != "i686" ]; then \
     printf '\nYou need to specify the architecture with "--build-arg architecture=i686" on your\n\
     \r"docker build" command line. "x86_64" and "i686" are supported. Aborting build!\n\n'; exit 1; fi
 
-RUN ln -s /usr/share/zoneinfo/UTC /etc/localtime \
-    && pacman-key --init \
+RUN pacman-key --init \
     && pacman-key --populate archlinux \
     # Unfortunately this hack has to stay until Arch Linux bootstrap tarballs start including `sed' package, which is
     # required by `rankmirrors', which comes with `pacman' package, while that one doesn't depend on `sed'. (Note to
